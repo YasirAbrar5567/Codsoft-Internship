@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Main3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Marks In Subject-1:");
+        int subject1 = sc.nextInt();
+        System.out.println("Enter Marks In Subject-2:");
+        int subject2 = sc.nextInt();
+        System.out.println("Enter Marks In Subject-3:");
+        int subject3 = sc.nextInt();
+        System.out.println("Enter Marks In Subject-4:");
+        int subject4 = sc.nextInt();
+        System.out.println("Enter Marks In Subject-5:");
+        int subject5 = sc.nextInt();
+        int totalmarks = (subject1 + subject2 + subject3 + subject4 + subject5);
+        System.out.println("Your Total Marks Are:" + totalmarks);
+        int averagemarks = totalmarks / 5;
+        System.out.println("Your Average Marks Are:" + averagemarks);
+        if (averagemarks >= 80 && averagemarks < 100) {
+            System.out.println("your grade is 'A' ");
+        }
+        if (averagemarks >= 60 && averagemarks < 80) {
+            System.out.println("your grade is 'B' ");
+        }
+        if (averagemarks >= 40 && averagemarks < 60) {
+            System.out.println("your grade is 'C' ");
+        }
+        if (averagemarks >= 20 && averagemarks < 40) {
+            System.out.println("your grade is 'D' ");
+        }
+        if (averagemarks >= 0 && averagemarks < 20) {
+            System.out.println("your grade is 'E' ");
+        }
+    }
+}
