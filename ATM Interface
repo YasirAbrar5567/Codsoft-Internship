@@ -1,0 +1,96 @@
+import java.util.Scanner;
+public class Main3 {
+    public static void main(String[] args) {
+        System.out.println("Enter your pin");
+        Scanner sc = new Scanner(System.in);
+        int pin = sc.nextInt();
+        if (userpin(pin)) {
+            menu();
+            int choice = sc.nextInt();
+            userchoice(choice);
+        } else {
+            System.out.println("enter a valid pin");
+        }
+    }
+    private static boolean userpin(int pin) {
+        return pin >= 1000 && pin <= 9999;
+    }
+
+    private static void menu() {
+        System.out.println("SELECT 1 FOR SAVINGS");
+        System.out.println("SELECT 2 FOR BALANCE ENQUIRY");
+        System.out.println("SELECT 3 FOR CHANGE OF PIN");
+        System.out.println("SELECT 4 FOR DEPOSIT");
+        System.out.println("SELECT 5 FOR EXIT");
+    }
+
+    private static void userchoice(int choice) {
+        switch (choice) {
+            case 1:
+                savings();
+                break;
+            case 2:
+                balanceEnquiry();
+                break;
+            case 3:
+                chnagePin();
+                break;
+            case 4:
+                deposit();
+                break;
+            case 5:
+                exit();
+                break;
+            default:
+                System.out.println("ENTER VALID NUM");
+        }
+    }
+
+    private static void savings() {
+        System.out.println("Savings");
+        System.out.println("enter amount for withdrawal:");
+        Scanner sc = new Scanner(System.in);
+        int amount = sc.nextInt();
+        if (amount <= 10000) {
+            System.out.println("Your transaction is procesing");
+            int balance = 50000;
+            int presentbalance = (balance - amount);
+            System.out.println("your remaining balance is:" + presentbalance);
+        }
+        else {
+            System.out.println("Max amount is 10k only");
+        }
+    }
+    private static void balanceEnquiry() {
+        System.out.println("Balance enquiry");
+        int urbalance = 50000;
+        System.out.format("Your current balance is %d", +urbalance);
+    }
+    private static void chnagePin(){
+        System.out.println("CHANGE PIN");
+        System.out.println("enter your pin:");
+        Scanner sc = new Scanner(System.in);
+        int currentpin = sc.nextInt();
+        if (currentpin >= 1000 && currentpin <= 9999) {
+            System.out.println("enter new pin");
+            int newpin = sc.nextInt();
+            System.out.println("your new pin is:" + newpin);
+            System.out.println("your pin is changed");
+        } else {
+            System.out.println("enter a 4-digit valid pin");
+        }
+    }
+    private static void deposit(){
+        System.out.println("DEPOSIT");
+        System.out.println("enter amount to be deposited:");
+        Scanner sc = new Scanner(System.in);
+        int deposit = sc.nextInt();
+        int balance = 50000;
+        int newbalance = deposit + balance;
+        System.out.println("Your new balance is:" + newbalance);
+    }
+    private static void exit(){
+        System.out.println("EXIT");
+        System.out.println("Thank You..!");
+    }
+}
