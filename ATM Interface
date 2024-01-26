@@ -73,7 +73,7 @@ public class Main3 {
         int currentpin = sc.nextInt();
         if (currentpin >= 1000 && currentpin <= 9999) {
             System.out.println("enter new pin");
-            int newpin = sc.nextInt();
+            int newpin = sc.nextInt(); 
             System.out.println("your new pin is:" + newpin);
             System.out.println("your pin is changed");
         } else {
